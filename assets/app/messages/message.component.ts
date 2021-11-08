@@ -35,7 +35,7 @@ export class MessageComponent {
     @Output('outputMessage') editClicked_MessageMetodoClasseAlias = new EventEmitter<string>();
 
     onEdit(){
-    // alert('Ta funfando')
+    // alert('Ta funcionando')
         this.editClicked_MessageMetodoClasse.emit("Texto veio de message (child) para o app (pai)");
         this.editClicked_MessageMetodoClasseAlias.emit("Texto veio de message (child) para o app (pai) - Alias");
     }

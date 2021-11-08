@@ -1,17 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      
-      <app-message 
-      [messageVarClasse]="messageBinding" 
-      (editClicked_MessageMetodoClasse= "messageBinding.content = $event")
-      >
-      </app-message>
-      <!-- com alias -->
-      <app-message 
-      [inputMessage]="messageBindingAlias"
-      (outputMessage)="messageBindingAlias.content = $event">
-      </app-message>
-    </div>
-  </div>
+          <div class="col-md-8 col-md-offset-2">Apos Reestruturação</div>
+          <app-message-input></app-message-input>
+          <app-message-list></app-message-list>
+          <div class="col-md-8 col-md-offset-2">Apos Reestruturação</div>
+      </div>
 </div>
