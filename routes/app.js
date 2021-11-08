@@ -1,6 +1,11 @@
 var express = require('express');
 var router = express.Router();
+
 var User = require('../models/user');
+
+router.get('/node-mongodb-mongoose-user', function (req, res, next) {
+    res.render('node');
+})
 
 router.post('/node-mongodb-mongoose-user', function (req, res, next) {
     var emailVar = req.body.emailBody;
@@ -32,6 +37,10 @@ router.get('/message/:msgParam', function(req, res, next) {
     res.render('node', {message: req.params.msgParam});
 });
 
+router.get('/registro-usuario-salvar', function(req, res, next) {
+    res.render('registro-usuario-salvar');
+});
+
 router.post('/message', function (req, res, next) {
     var messageVar = req.body.messageBody;
     res.redirect('/message/' + messageVar);
@@ -39,11 +48,16 @@ router.post('/message', function (req, res, next) {
 
 
 router.get('/node-mongodb-mongoose-user-busca', function (req, res, next) {
-    User.findOne({}, function(err, documents) {
+    User.findOne({}, function(err, documents){
         if (err) {
             return res.send('Error!! :-(');
         }
-        res.render('node', {firstNameV: documents});
+        res.render('node', {firstNameV: documents.firstName,
+                            lastNameV: documents.lastName,
+                            passwordV: documents.password,
+                            emailV: documents.email,
+                            messagesV: documents.message
+        });
     });
 });
 
