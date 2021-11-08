@@ -3,8 +3,18 @@ import { AppComponent } from "../app.component";
 import { Message } from "./message.model";
 
 @Component({
-    selector: 'app-message',
-    templateUrl: './message.component.html',
+    selector: 'app-messages',
+    template:`
+      <div class="row">
+        <strong class="col-md-8 col-md-offset-2">Após Reestruturação</strong>
+        <app-message-input></app-message-input>
+      </div>
+      <hr/>
+      <div class="row">
+        <app-message-list></app-message-list>
+        <strong class="col-md-8 col-md-offset-2">Após Reestruturação</strong>
+      </div>
+    `,
     styles:[`
     .author{
         display: inline-block;
@@ -26,8 +36,15 @@ import { Message } from "./message.model";
     }
 `]
 })
-export class MessageComponent {
+export class MessagesComponent {
+
     color ='yellow';
+    tam = 12;
+    onMudaStyle(){
+      this.color = 'red';
+      this.tam = 16;
+    }
+
     @Input() messageVarClasse : Message = new Message("","");
     @Input('inputMessage') messageVarClasseAlias : Message = new Message("","");
 

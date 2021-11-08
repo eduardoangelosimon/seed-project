@@ -80,7 +80,7 @@ import { Component } from "@angular/core";
     }
 `]
 })
-export class Formulario {
+export class FormularioComponent {
    formulario = {
       fname: '',
       email:'',

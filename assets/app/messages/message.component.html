@@ -3,7 +3,11 @@
       <div class="col-md-8 col-md-offset-2">
           <!-- <input type="text" [(ngModel)]="message.content">
           <input type="text" [(ngModel)]="message.author"> -->
-          <article class="panel panel-default"[ngStyle]="{background: color}">
+          <article class="panel panel-default"[ngStyle]="{background: color}"
+                                              (click)="color = 'yellow'"
+                                              (dbclick)="onMudaStyle()"
+                                              (mouseenter)="color = 'green'"
+                                              (mouseleave)="color = 'blue'">
               <div class="panel-body">
                   {{ messageVarClasse.content }}
                   {{ messageVarClasseAlias.content }}

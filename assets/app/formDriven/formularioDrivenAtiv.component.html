@@ -1,0 +1,45 @@
+<div class="col-md-8 col-md-offset-2">
+    <form (ngSubmit)="onSubmit(refLocalFormDrivenAtiv)" #refLocalFormDrivenAtiv="ngForm" ngNativeValidate>
+        <div class="form-group">
+            <label>Nome</label>
+            <input 
+                type="text"
+                id="myContentngDrivenAtivFormNome"
+                class="form-control"
+                ngModel
+                name="myContentngDrivenAtivFormNome"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input
+                type='text'
+                id="myContentngDrivenAtivFormEmail"
+                class="form-control"
+                ngModel
+                name="myContentngDrivenAtivFormEmail"
+                required
+            >
+        </div>
+        
+        <div class="form-group">
+            <label>Username</label>
+            <input
+                type='text'
+                id="myContentngDrivenAtivFormUsername"
+                class="form-control"
+                [(ngModel)]="username"
+                name="myContentngDrivenAtivFormUsername"
+                required
+            >
+        </div>
+        <button type="submit" class="btn btn primary">Save myContentngDrivenAtiveForm</button>
+    </form>
+
+    <strong>== RELATÓRIO myContentngDrivenAtivForm ==</strong> <br>
+    nome: {{ nome }} <br>
+    email: {{email}} <br>
+    username: {{ username }} <br>
+</div> 
