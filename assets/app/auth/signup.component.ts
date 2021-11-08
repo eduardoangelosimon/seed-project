@@ -9,6 +9,11 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 export class SignupComponent implements OnInit{
     myForm: FormGroup;
 
+    onSubmit(){
+        console.log(this.myForm.value);
+        this.myForm.reset();
+    }
+
     ngOnInit(){
         this.myForm = new FormGroup({
             firstNameTS: new FormControl(null, Validators.required),
@@ -17,7 +22,8 @@ export class SignupComponent implements OnInit{
                 Validators.required,
                 Validators.pattern("[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+")
             ]),
-            passwordTS: new FormControl(null, Validators.required)
+            passwordTS: new FormControl(null, Validators.required),
+            termoTS: new FormControl(null, Validators.required),
         });
     }
 }

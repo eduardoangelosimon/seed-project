@@ -1,31 +1,34 @@
 <div class="container">
-  <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-          <!-- <input type="text" [(ngModel)]="message.content">
-          <input type="text" [(ngModel)]="message.author"> -->
-          <article class="panel panel-default"[ngStyle]="{background: color}"
-                                              (click)="color = 'yellow'"
-                                              (dbclick)="onMudaStyle()"
-                                              (mouseenter)="color = 'green'"
-                                              (mouseleave)="color = 'blue'">
-              <div class="panel-body">
-                  {{ messageVarClasse.content }}
-                  {{ messageVarClasseAlias.content }}
-                  <!-- {{ message.content }} -->
-              </div>
-              <footer class="panel-footer">
-                  <div class="author">
-                      {{ messageVarClasse.username }}
-                      {{ messageVarClasseAlias.username }}
-                      <!-- {{ message.author }} -->
-                  </div>
-                  <div class="config">
-                      <!-- <a href="#">Edit</a> -->
-                      <a href="#"(click)="onEdit()">Edit</a>
-                      <a href="#">Delete</a>
-                  </div>
-              </footer>
-          </article>
-      </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <!-- <input type="text" [(ngModel)]="message.content">
+            <input type="text" [(ngModel)]="message.author"> -->
+
+            <article class="panel panel-default"
+                [ngStyle]="{background: color}"
+                (click)="color = 'yellow'"
+                (dbclick)="onMudaStyle()"
+                (mouseenter)="color = 'green'"
+                (mouseleave)="color = 'blue'"
+            >
+                <div class="panel-body">
+                    {{ messageVarClasse.content }}
+                    {{ messageVarClasseAlias.content }}
+                    <!-- {{ message.content }} -->
+                </div>
+                <footer class="panel-footer">
+                    <div class="author">
+                        {{ messageVarClasse.username }}
+                        {{ messageVarClasseAlias.username }}
+                        <!-- {{ message.username}} -->
+                    </div>
+                    <div class="config">
+                        <!-- <a href="#">Edit</a> -->
+                        <a (click)="onEdit()">Edit</a>
+                        <a (click)="onDelete()">Delete</a>
+                    </div>
+                </footer>
+            </article>
+        </div>
+    </div>
   </div>
-</div>

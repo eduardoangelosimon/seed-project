@@ -1,20 +1,11 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { AppComponent } from "../app.component";
 import { Message } from "./message.model";
+import { MessageService } from "./message.services";
 
 @Component({
     selector: 'app-messages',
-    template:`
-      <div class="row">
-        <strong class="col-md-8 col-md-offset-2">Após Reestruturação</strong>
-        <app-message-input></app-message-input>
-      </div>
-      <hr/>
-      <div class="row">
-        <app-message-list></app-message-list>
-        <strong class="col-md-8 col-md-offset-2">Após Reestruturação</strong>
-      </div>
-    `,
+    templateUrl:'./message.component.html',
     styles:[`
     .author{
         display: inline-block;
@@ -47,6 +38,11 @@ export class MessagesComponent {
 
     @Input() messageVarClasse : Message = new Message("","");
     @Input('inputMessage') messageVarClasseAlias : Message = new Message("","");
+
+    constructor(private messageServiceObj: MessageService) {}
+    onDelete(){
+        this.messageServiceObj.deleteMessage(this.messageVarClasse);
+    }
 
     @Output() editClicked_MessageMetodoClasse = new EventEmitter<string>();
     @Output('outputMessage') editClicked_MessageMetodoClasseAlias = new EventEmitter<string>();

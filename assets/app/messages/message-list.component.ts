@@ -4,15 +4,8 @@ import { MessageService } from "./message.services";
 
 @Component({
     selector: 'app-message-list',
-    template:` 
-        <div class="col-md-8 col-md-offset-2">
-            <app-messages [messageVarClasse]="msg"
-                 (editClicked_MessageMetodoClasse)="msg.content = $event"
-                 *ngFor="let msg of messageS">
-            </app-messages>
-        </div>
-    `,
-    providers: [MessageService]
+    templateUrl:"./message-list.component.html",
+   /*  providers: [MessageService] */
 })
 export class MessageListComponent implements OnInit {
     messageS: Message[] = 
@@ -30,3 +23,4 @@ export class MessageListComponent implements OnInit {
       this.messageS = this.messageService.getMessages();
     }
 }
+
