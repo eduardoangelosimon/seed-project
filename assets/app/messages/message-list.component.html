@@ -1,6 +1,6 @@
 <div class="col-md-8 col-md-offset-2">
-    <app-messages [messageVarClasse]="msg"
+    <app-message [messageVarClasse]="msg"
          (editClicked_MessageMetodoClasse)="msg.content = $event"
          *ngFor="let msg of messageS">
-    </app-messages>
+    </app-message>
 </div>

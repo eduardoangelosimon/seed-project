@@ -18,9 +18,10 @@ export class MessageListComponent implements OnInit {
     constructor (private messageService: MessageService){ }
 
     ngOnInit(): void{
-      //messageS aponta para o array messageSService
+      // messageS aponta para o array messageSService
       // que armazena os dados
       this.messageS = this.messageService.getMessages();
+      // console.log("!!!!")
     }
 }
 

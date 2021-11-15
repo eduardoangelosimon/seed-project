@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+
             <!-- <input type="text" [(ngModel)]="message.content">
             <input type="text" [(ngModel)]="message.author"> -->
 
@@ -14,7 +15,7 @@
                 <div class="panel-body">
                     {{ messageVarClasse.content }}
                     {{ messageVarClasseAlias.content }}
-                    <!-- {{ message.content }} -->
+                     <!-- {{ message.content }} -->
                 </div>
                 <footer class="panel-footer">
                     <div class="author">
@@ -23,7 +24,7 @@
                         <!-- {{ message.username}} -->
                     </div>
                     <div class="config">
-                        <!-- <a href="#">Edit</a> -->
+                        <a href="#">Edit</a>
                         <a (click)="onEdit()">Edit</a>
                         <a (click)="onDelete()">Delete</a>
                     </div>

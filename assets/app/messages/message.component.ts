@@ -4,7 +4,7 @@ import { Message } from "./message.model";
 import { MessageService } from "./message.services";
 
 @Component({
-    selector: 'app-messages',
+    selector: 'app-message',
     templateUrl:'./message.component.html',
     styles:[`
     .author{
@@ -27,7 +27,7 @@ import { MessageService } from "./message.services";
     }
 `]
 })
-export class MessagesComponent {
+export class MessageComponent {
 
     color ='yellow';
     tam = 12;

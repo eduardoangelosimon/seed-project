@@ -14,13 +14,15 @@ import { SignupComponent } from './auth/signup.component';
 import { LogoutComponent } from './auth/logout.component';
 import { HeaderComponent } from './header.component';
 import { FormularioDrivenAtivComponent } from './formDriven/formularioDrivenAtiv.component';
-import { MessagesComponent } from './messages/message.component';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageComponent } from './messages/message.component';
 import { MessageInputComponent } from './messages/message-input.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         MessagesComponent,
+        MessageComponent,
         MessageListComponent,
         MessageInputComponent,
         FormularioComponent,
