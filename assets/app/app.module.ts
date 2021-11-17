@@ -18,6 +18,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { MessageComponent } from './messages/message.component';
 import { MessageInputComponent } from './messages/message-input.component';
 
+//import { UserComponentSave } from './user/userSave.component'
+import { zip } from 'rxjs/operators';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -33,11 +36,13 @@ import { MessageInputComponent } from './messages/message-input.component';
         SigninComponent,
         SignupComponent,
         FormularioDrivenAtivComponent,
+        //UserComponentSave,
 
     ],
     imports: [BrowserModule, FormsModule, myrouting, ReactiveFormsModule],
     bootstrap: [AppComponent]
 })
+
 export class AppModule {
     
 }

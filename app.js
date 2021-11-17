@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
+var user = require('./routes/')
 var appRoutes = require('./routes/app');
 const { Mongoose } = require('mongoose');
 
@@ -38,5 +38,6 @@ app.use(function (req, res, next) {
     return res.render('index');
 });
 
+app.use('/user', userRoutes);
 
 module.exports = app;

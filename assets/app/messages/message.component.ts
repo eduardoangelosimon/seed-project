@@ -52,4 +52,6 @@ export class MessageComponent {
         this.editClicked_MessageMetodoClasse.emit("Texto veio de message (child) para o app (pai)");
         this.editClicked_MessageMetodoClasseAlias.emit("Texto veio de message (child) para o app (pai) - Alias");
     }
+    
+    
 }

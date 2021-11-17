@@ -1,4 +1,5 @@
 var express = require('express');
+const user = require('../models/user');
 var router = express.Router();
 
 
@@ -6,8 +7,32 @@ router.get('/', function (req, res, next) {
     res.render('index');
 });
 
+var userRoutes = require('../models/user');
 
-// var User = require('../models/user');
+router.post('/', function (req, res, next) {
+    var user = new user({
+        firstNameSch: req.body.firstName,
+        lastNameSch: req.body.lastName,
+        passwordSch: req.body.password,
+        emailSch: req.body.email,
+        messagesSch: req.body.messages
+    });
+
+    user.save(function(err, result){
+        if(err){
+            return res.status(500).json({
+                myErroTitle: 'Um erro aconteceu na hora de salvar o usuário',
+                myError: err
+            });
+        }
+        res.status(201).json({
+            myMsgSuccess: "Usuário salvo com sucesso",
+            objUserSave : result,
+            auxUserId
+        });
+        console.log(result);
+    });
+});
 
 // router.get('/node-mongodb-mongoose-user', function (req, res, next) {
 //     res.render('node');

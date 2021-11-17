@@ -24,4 +24,3 @@ export class MessageListComponent implements OnInit {
       // console.log("!!!!")
     }
 }
-
